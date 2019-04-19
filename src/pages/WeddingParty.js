@@ -40,24 +40,26 @@ class WeddingParty extends Component {
           And of course, there's mom.  Not a bridesmaid but the #1 support.  Thank you always to mom for loving Yves like her own son and for not really taking our money when we lose at mahjong.`}
           label="THE BRIDESMAIDS & MOM"
         />
-        <StaggerCard disabled={this.state.disabled} />
+        <StaggerCard
+          disabled={this.state.disabled}
+          text={
+            <>
+            These are some of the finest gentlemen I happen to come across in life. Ryan was probably my very first friend since the age of 5. He had a mushroom haircut back but I still thought he was a pretty cool kid. I met Jeff a year after, and pretty much everything that came out of Jeff's mouth was hilarious. Jeff, Ryan, and I were lucky enough to get through elementary school, middle school, and high school together. After high school, we continued to find time to catch up, and it was always a good time. Without a doubt if I were in trouble or made a mess of any sort, I know these two would have my back or clean up any theoretical messes I would have made, respectfully.
+            <br/>
+            <br/>
+
+          After my first degree of studying Biochemistry, I decided to make a career pivot and study Computer Science at UBC. This is where I met my good bud Vincent. He was just as passionate as I was about programming. We pretty much joined any Hackathon that was in Vancouver during our time in the program to hone our skills. Aside from that we also started doing jiu jitsu together and literally got closer as we try to choke each other out.
+          <br/>
+          <br/>
+
+          Combining the three forces of nature, they form the group known as the GROOMS OF HONOUR
+        </>}
+          label="THE GROOMS OF HONOUR"
+          />
 
         <Passage>
           <p>
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?"
+            "Lorem ipsum"
           </p>
         </Passage>
         <Footer />
