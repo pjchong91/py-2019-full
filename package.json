@@ -26,7 +26,8 @@
     "rrc": "^0.10.1",
     "string-to-dom": "^0.1.5",
     "styled-components": "^4.0.2",
-    "styled-transition-group": "^1.0.0"
+    "styled-transition-group": "^1.0.0",
+    "vertical-timeline-component-for-react": "^1.0.6"
   },
   "devDependencies": {
     "prerender-spa-plugin": "^3.0.0",

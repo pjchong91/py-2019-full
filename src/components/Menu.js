@@ -18,6 +18,10 @@ const routes = [
     name: 'Accordions',
     link: '/accordions',
   },
+  {
+    name: 'Wedding Day Timeline',
+    link: '/wedding-timeline',
+  },
 ];
 
 const Menu = ({ handleMenu, menuOpen, mobileHidden }) => {

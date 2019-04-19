@@ -19,6 +19,10 @@ const routes = [
     path: '/accordions',
     component: 'pages/Accordions',
   },
+  {
+    path: '/wedding-timeline',
+    component: 'pages/WeddingTimeline',
+  },
 ];
 
 const generateRoutes = function() {
