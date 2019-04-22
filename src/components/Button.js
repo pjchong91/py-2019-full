@@ -18,14 +18,14 @@ const Root = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  &:hover {
-    a {
-      background: ${({ theme }) => theme.colorNavy};
 
-      color: white;
-      transition: all 0.8s;
-    }
+  a:hover {
+    background: ${({ theme }) => theme.colorNavy};
+
+    color: white;
+    transition: all 0.8s;
   }
+
   a {
     margin: 0 auto;
     color: ${({ theme }) => theme.colorNavy};
