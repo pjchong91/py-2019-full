@@ -9,15 +9,74 @@ import Footer from 'components/Footer';
 import media from 'src/styles/media';
 import { vw, vwTablet, vwMobile } from 'src/styles/utils';
 
-const accomodations = [
-  { question: 'QUestion question question', answer: 'answer answer answer' },
-  { question: 'QUestion question question', answer: 'answer answer answer' },
+const locationQuestions = [
+  {
+    question: 'Have you guys picked a venue?',
+    answer:
+      'Indeed we have!  We plan to have our ceremony and reception at the Rosewood Hotel Georgia in Vancouver.  It is located across the street from the Vancouver Art Gallery.',
+  },
+  {
+    question: "I'm coming from out of town.  Where should I stay?",
+    answer:
+      'Firstly, thank you for planning to travel all the way to Vancouver for our wedding :)!  We have a special room rate with the Rosewood Hotel Georgia that you may inquire with us about but we would also recommend looking into AirBnB.  Pam and Yves are based out in Richmond.  Please let us know if we can help you with planning your accomodations.',
+  },
+];
+const transportationQuestions = [
+  {
+    question: 'Will there be parking?',
+    answer: (
+      <span>
+        <p>
+          Valet parking is available but it is not covered. We recommend using the
+          public parkades nearby. In particular:
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://lots.impark.com/imp?utm_source=google&utm_medium=maps&utm_content=0011646&utm_campaign=local_canada#details=1,1646"
+              target="_blank"
+            >
+              Winners/Future Shop Lot (5 minute walk, 24hr){' '}
+            </a>
+          </li>
 
-  { question: 'QUestion question question', answer: 'answer answer answer' },
-
-  { question: 'QUestion question question', answer: 'answer answer answer' },
-
-  { question: 'QUestion question question', answer: 'answer answer answer' },
+          <li>
+            <a
+              href="https://lots.impark.com/imp?utm_source=google&utm_medium=maps&utm_content=10011880&utm_campaign=local_canada#details=1,1880"
+              target="_blank"
+            >
+              HSBC Lot (2 minute walk, 24hr){' '}
+            </a>
+          </li>
+        </ul>
+        <p>
+          The location is also close to Vancouver City Center Skytrain Station
+        (Canada Line) and Granville Skytrain Station (Expo/Millenium Line).
+        </p>
+      </span>
+    ),
+  },
+  { question: 'How can I get there by transit?', answer: (
+    <p>
+      The location is also close to Vancouver City Center Skytrain Station (Canada Line) and Granville Skytrain Station (Expo/Millenium Line).
+    </p>
+    )
+  },
+];
+const rsvpQuestions = [
+  {
+    question: 'When will I receive my invitation?  When should I RSVP by?',
+    answer:
+      'Invitations will be sent out around May and RSVPs to be returned around July.  If you live in or around Vancouver, we will be hand delivering our invitations.',
+  },
+  {
+    question: "I won't be able to make it to your wedding :(",
+    answer:
+      "We're sad to hear you won't be joining us! Whenever you find out you can't make it, please let us know so we can plan accordingly.",
+  },
+];
+const giftsQuestions = [
+  { question: 'Do you guys have a wedding registry?', answer: "Since we've lived together for the past two years, we have a lot of the essentials already and not a ton of space for physical gifts. Though if you would like, we would appreciate monetary contributions toward our honeymoon fund to Japan following our wedding in September! :)" },
 ];
 class FAQ extends Component {
   // state = {
@@ -32,16 +91,20 @@ class FAQ extends Component {
 
   constructor(props) {
     super(props);
+    this.$locations=React.createRef()
+    this.$transportation=React.createRef()
+    this.$rsvp=React.createRef()
+    this.$gifts=React.createRef()
   }
 
   state = {
     activeCategory: 0,
   };
 
-  handleClickCategory = index => {
-    // const $element = this.$refs[index].current;
-    scrollToElement($element, {
-      offset: -75,
+  handleClickCategory = category => {
+    console.log(category)
+    scrollToElement(category, {
+      offset: -60,
     });
   };
 
@@ -59,22 +122,24 @@ class FAQ extends Component {
           <h1>{this.state.activeCategory}</h1>
         </Parallax>
         <h1>Frequently Asked Questions</h1>
+        <Intro>We thought you might have some questions we can answer. Should there be any questions you still have that aren't found here feel free to contact us.</Intro>
+        <br/>
 
         <Navigation>
-          <a onClick={() => this.handleClickCategory(0)}>accomodations</a>
-          <a onClick={() => this.handleClickCategory(1)}>parking</a>
-          <a onClick={() => this.handleClickCategory(2)}>rsvp</a>
-          <a onClick={() => this.handleClickCategory(3)}>gifts/registry</a>
+          <a onClick={() => this.handleClickCategory(this.$locations.current)}>locations</a>
+          <a onClick={() => this.handleClickCategory(this.$transportation.current)}>transportation</a>
+          <a onClick={() => this.handleClickCategory(this.$rsvp.current)}>rsvp</a>
+          <a onClick={() => this.handleClickCategory(this.$gifts.current)}>gifts/registry</a>
         </Navigation>
 
         <Waypoint
-          key="accomodations"
-          onEnter={() => this.handleEnterWaypoint('accomodations')}
+          key="locations"
+          onEnter={() => this.handleEnterWaypoint('locations')}
           topOffset="25%"
           bottomOffset="25%"
         >
-          <Section>
-            {accomodations.map((question, index) => (
+          <Section ref={this.$locations}>
+            {locationQuestions.map((question, index) => (
               <QuestionBlock
                 key={index}
                 // isActive={index === this.state.activeIndex}
@@ -87,23 +152,23 @@ class FAQ extends Component {
           </Section>
         </Waypoint>
         <Waypoint
-          key="parking"
-          onEnter={() => this.handleEnterWaypoint('parking')}
+          key="transportation"
+          onEnter={() => this.handleEnterWaypoint('transportation')}
           topOffset="25%"
           bottomOffset="25%"
         >
-          <Section>
+          <Section ref={this.$transportation}>
             {/* <Parallax y={[-20, 20]} tagOuter="figure" className="parallax">
-              <h1>accomodations</h1>
+              <h1>locations</h1>
             </Parallax> */}
-            {accomodations.map((question, index) => (
+            {transportationQuestions.map((question, index) => (
               <QuestionBlock
                 key={index}
                 // isActive={index === this.state.activeIndex}
                 // onClick={() => this.handleToggle(index)}
               >
                 <h2>{question.question}</h2>
-                <p>{question.answer}</p>
+                {question.answer}
               </QuestionBlock>
             ))}
           </Section>
@@ -114,11 +179,11 @@ class FAQ extends Component {
           topOffset="25%"
           bottomOffset="25%"
         >
-          <Section>
+          <Section ref={this.$rsvp}>
             {/* <Parallax y={[-20, 20]} tagOuter="figure" className="parallax">
-              <h1>accomodations</h1>
+              <h1>locations</h1>
             </Parallax> */}
-            {accomodations.map((question, index) => (
+            {rsvpQuestions.map((question, index) => (
               <QuestionBlock
                 key={index}
                 // isActive={index === this.state.activeIndex}
@@ -136,11 +201,11 @@ class FAQ extends Component {
           topOffset="25%"
           bottomOffset="25%"
         >
-          <Section>
+          <Section ref={this.$gifts}>
             {/* <Parallax y={[-20, 20]} tagOuter="figure" className="parallax">
-              <h1>accomodations</h1>
+              <h1>locations</h1>
             </Parallax> */}
-            {accomodations.map((question, index) => (
+            {giftsQuestions.map((question, index) => (
               <QuestionBlock
                 key={index}
                 // isActive={index === this.state.activeIndex}
@@ -184,6 +249,12 @@ const Root = styled.div`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  ul {
+    margin-left: ${vwMobile(20)};
+    a {
+      color: ${({ theme })=> theme.colorNavy};
+    }
+  }
   h1:first-of-type {
     margin-bottom: ${vwMobile(20)};
   }
@@ -206,7 +277,37 @@ const Root = styled.div`
       font-size: ${vwMobile(40)};
     }
   }
+`;
 
+const QuestionBlock = styled.div`
+position:relative;
+z-index:3;
+  p {
+    /* height: ${props => (props.isActive ? 'auto' : '0')};
+    max-height: ${props => (props.isActive ? '500px' : '0')};
+    opacity: ${props => (props.isActive ? 1 : 0)}; */
+    transition: all 0.5s;
+  }
+`;
+
+const Intro = styled.p`
+  padding-right: ${vwMobile(50)};
+`
+
+const Section = styled.div`
+  position: relative;
+  padding-right: ${vwMobile(50)};
+  h2 {
+    margin-top: ${vwMobile(25)};
+    margin-bottom: ${vwMobile(10)};
+  }
+`;
+
+const Navigation = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: ${vwMobile(20)};
   a {
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -255,26 +356,4 @@ const Root = styled.div`
     background-position: center;
     transform: translate(${vwMobile(-20)}, -50%);
   }
-`;
-
-const QuestionBlock = styled.div`
-position:relative;
-z-index:3;
-  p {
-    /* height: ${props => (props.isActive ? 'auto' : '0')};
-    max-height: ${props => (props.isActive ? '500px' : '0')};
-    opacity: ${props => (props.isActive ? 1 : 0)}; */
-    transition: all 0.5s;
-  }
-`;
-
-const Section = styled.div`
-  position: relative;
-`;
-
-const Navigation = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: ${vwMobile(20)};
 `;
