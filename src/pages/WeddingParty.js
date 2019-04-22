@@ -35,9 +35,23 @@ class WeddingParty extends Component {
         <StaggerCard
           disabled={this.state.disabled}
           image={require('src/assets/images/bridesmaids.jpeg')}
-          text={`I'm probably the definition of #NoNewFriends.  I have loved E & D for more than half my life at this point.  I didn't remember to ask them to be my bridesmaids.  I added them to a group chat and just went from there.  Without question I knew, I wasn't getting married without them.  C, is going to be my future sister in law.  She loves to laugh and cares intensely for the people around her.  I figured I wouldn't get to pick my sister in law but fate did a kindness by making her the sister I would get to have for the rest of my life.
-
-          And of course, there's mom.  Not a bridesmaid but the #1 support.  Thank you always to mom for loving Yves like her own son and for not really taking our money when we lose at mahjong.`}
+          text={
+            <>
+              I'm probably the definition of #NoNewFriends. I have loved E & D
+              for more than half my life at this point. I didn't remember to ask
+              them to be my bridesmaids. I added them to a group chat and just
+              went from there. Without question I knew, I wasn't getting married
+              without them. C, is going to be my future sister in law. She loves
+              to laugh and cares intensely for the people around her. I figured
+              I wouldn't get to pick my sister in law but fate did a kindness by
+              making her the sister I would get to have for the rest of my life.
+              <br />
+              <br />
+              And of course, there's mom. Not a bridesmaid but the #1 support.
+              Thank you always to mom for loving Yves like her own son and for
+              not really taking our money when we lose at mahjong.
+            </>
+          }
           label="THE BRIDESMAIDS & MOM"
         />
         <StaggerCard

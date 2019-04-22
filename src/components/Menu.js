@@ -15,8 +15,8 @@ const routes = [
     link: '/wedding-party',
   },
   {
-    name: 'Accordions',
-    link: '/accordions',
+    name: 'FAQ',
+    link: '/faq',
   },
   {
     name: 'Wedding Day Timeline',

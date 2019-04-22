@@ -16,8 +16,8 @@ const routes = [
     component: 'pages/WeddingParty',
   },
   {
-    path: '/accordions',
-    component: 'pages/Accordions',
+    path: '/faq',
+    component: 'pages/FAQ',
   },
   {
     path: '/wedding-timeline',
