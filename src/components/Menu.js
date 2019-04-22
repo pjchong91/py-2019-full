@@ -18,6 +18,10 @@ const routes = [
     name: 'FAQ',
     link: '/faq',
   },
+  {
+    name: 'Wedding Day Timeline',
+    link: '/wedding-timeline',
+  },
 ];
 
 const Menu = ({ handleMenu, menuOpen, mobileHidden }) => {

@@ -19,6 +19,10 @@ const routes = [
     path: '/faq',
     component: 'pages/FAQ',
   },
+  {
+    path: '/wedding-timeline',
+    component: 'pages/WeddingTimeline',
+  },
 ];
 
 const generateRoutes = function() {
