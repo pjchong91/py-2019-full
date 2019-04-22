@@ -22,6 +22,10 @@ const routes = [
     name: 'Wedding Day Timeline',
     link: '/wedding-timeline',
   },
+  {
+    name: 'Contact Us',
+    link: '/contact-us',
+  },
 ];
 
 const Menu = ({ handleMenu, menuOpen, mobileHidden }) => {
