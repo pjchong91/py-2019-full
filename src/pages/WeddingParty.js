@@ -70,12 +70,6 @@ class WeddingParty extends Component {
         </>}
           label="THE GROOMS OF HONOUR"
           />
-
-        <Passage>
-          <p>
-            "Lorem ipsum"
-          </p>
-        </Passage>
         <Footer />
       </Root>
     );

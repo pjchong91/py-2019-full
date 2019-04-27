@@ -61,6 +61,9 @@ export default createGlobalStyle`
   h1{
     font-family:${({ theme }) => theme.fontHeader};
   }
+  h3{
+    font-family:${({ theme }) => theme.fontBody};
+  }
   p{
     font-family:${({ theme }) => theme.fontBody};
     font-weight: 300;
